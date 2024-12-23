@@ -1,68 +1,124 @@
-# Gerenciador de Tarefas
+📝 Painel de Tarefas - Desafio Técnico
+Bem-vindo ao Painel de Tarefas, um projeto desenvolvido como parte do desafio técnico para a vaga de Desenvolvedor Júnior. Este painel permite a gestão completa de tarefas, com autenticação, filtros avançados e animações interativas. 🚀
 
-Uma aplicação web interativa para gerenciar tarefas com suporte a filtros por prioridade e status, edição dinâmica e animações. Este projeto utiliza React com TypeScript, animações com Framer Motion, e a biblioteca Headless UI para elementos interativos.
+📖 Descrição do Projeto
+O Painel de Tarefas é uma aplicação que permite:
 
----
+Adicionar, editar, remover e marcar tarefas como concluídas.
+Classificar tarefas por prioridade (Urgente, Alta, Média, Baixa).
+Filtrar tarefas por status (Concluídas / Não Concluídas) e prioridade.
+Persistir dados utilizando uma API.
+Autenticação de usuários para personalização das tarefas.
+O projeto foi desenvolvido com foco em React, TailwindCSS para estilização e Framer Motion para animações, proporcionando uma experiência de usuário interativa e moderna.
 
-## 🚀 Recursos
+✨ Funcionalidades
+✅ Funcionalidades Básicas
+Adicionar Tarefas
 
-### 🎨 Funcionalidades Gerais:
-- **Adição de Tarefas**: Adicione tarefas com prioridade personalizada.
-- **Edição de Nome e Prioridade**: Edite dinamicamente o nome e a prioridade de qualquer tarefa.
-- **Concluir/Desconcluir Tarefas**: Marque tarefas como concluídas ou retorne ao estado não concluído com animações suaves.
-- **Remoção de Tarefas**: Exclua tarefas individualmente.
-  
-### 🔍 Filtros:
-- **Por Prioridade**:
-  - Urgente ⚡
-  - Alta 🔴
-  - Média 🟡
-  - Baixa 🟢
-- **Por Status**:
-  - Concluído
-  - Não Concluído
+Campo de texto para criar novas tarefas.
+Seletor de prioridade ao criar a tarefa.
+Gerenciamento de Tarefas
 
-### 💫 Animações:
-- **Transições suaves**: Efeitos visuais de entrada e saída com Framer Motion.
-- **Botões interativos**: Animações em botões ao passar o mouse ou clicar.
+Editar: Botão para edição com salvamento ao clicar fora ou pressionar Enter.
+Remover: Botão para excluir tarefas (apenas tarefas não concluídas).
+Marcar como Concluída: Checkbox com animação interativa.
+Lista de Tarefas
 
----
+Exibição de tarefas classificadas por prioridade.
+Visual diferente para tarefas concluídas.
+Filtros Avançados
 
-## 🛠️ Tecnologias Utilizadas
+Filtro por status: Concluídas e Não Concluídas.
+Filtro por prioridade: Urgente, Alta, Média, Baixa.
+Persistência de Dados
 
-### Frontend:
-- **React** com **TypeScript**: Interface de usuário reativa e tipada.
-- **Framer Motion**: Efeitos de animação.
-- **Headless UI**: Componentes interativos como menus e listas personalizáveis.
-- **Heroicons**: Ícones estilizados e acessíveis.
+Dados das tarefas são armazenados em uma API, permitindo salvamento e recuperação.
+Design Responsivo
 
-### Backend:
-- Simulado com uma API REST para gerenciar as tarefas.
+Interface adaptável para diferentes dispositivos (desktop, tablet, mobile).
+🔐 Funcionalidades Extras (Bônus)
+Autenticação de Usuários
 
-### Estilização:
-- **Tailwind CSS**: Estilização rápida e responsiva com classes utilitárias.
-- **Modo Claro/Escuro**: Suporte nativo para tema claro e escuro.
+Sistema de login integrado.
+As tarefas são exclusivas por usuário autenticado.
+Animações Interativas
 
----
+Botões com efeitos de escala e transições suaves ao interagir.
+Animação na conclusão de tarefas.
+Deploy Online
 
-## 🖥️ Como Rodar o Projeto
+A aplicação foi publicada para acesso direto.
+🚀 Tecnologias Utilizadas
+React: Biblioteca para construção da interface.
+TypeScript: Tipagem estática para maior confiabilidade no código.
+TailwindCSS: Estilização rápida e responsiva.
+Framer Motion: Animações dinâmicas e interativas.
+Headless UI: Componentes acessíveis e estilizados.
+Axios: Requisições HTTP para a API.
+LocalStorage: Armazenamento temporário de dados no navegador.
+⚙️ Configuração do Projeto
+Pré-requisitos
+Node.js versão 14+
+Gerenciador de pacotes npm ou yarn
+Como Executar
+Clone o repositório:
 
-### Pré-requisitos
-- **Node.js** instalado (versão 16 ou superior).
-- **Gerenciador de Pacotes**: npm ou yarn.
+bash
+Copiar código
+git clone https://github.com/seu-usuario/painel-de-tarefas.git
+cd painel-de-tarefas
+Instale as dependências:
 
-### Passos:
-
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-
-   cd seu-repositorio
-
-2. **Instale as dependências:**:
-```bash
+bash
+Copiar código
 npm install
 # ou
 yarn install
+Crie um arquivo .env na raiz do projeto com a URL da API:
 
+arduino
+Copiar código
+REACT_APP_API_URL=http://sua-api.com
+Inicie o servidor de desenvolvimento:
 
+bash
+Copiar código
+npm run dev
+# ou
+yarn dev
+Acesse no navegador:
+
+arduino
+Copiar código
+http://localhost:3000
+📤 Deploy
+A aplicação está online e disponível em:
+https://painel-tarefas.vercel.app
+
+📚 Organização do Código
+Estrutura de Diretórios
+css
+Copiar código
+src/
+├── components/
+│   ├── Header.tsx
+│   ├── TaskInput.tsx
+│   ├── TaskList.tsx
+│   ├── TaskItem.tsx
+├── pages/
+│   ├── TasksPage.tsx
+│   ├── LoginPage.tsx
+├── services/
+│   ├── api.ts
+├── App.tsx
+├── index.tsx
+📌 Melhorias Futuras
+Adicionar testes unitários com Jest ou React Testing Library.
+Adicionar drag-and-drop para reordenar tarefas.
+Implementar notificações de feedback ao usuário.
+👤 Autor
+Seu Nome
+
+GitHub: seu-usuario
+LinkedIn: seu-linkedin
+✨ Obrigado por conferir o projeto! ✨
