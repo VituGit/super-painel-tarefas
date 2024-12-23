@@ -116,7 +116,7 @@ http://localhost:3000
 
 A aplicação está online e disponível em:
 
-[https://painel-tarefas.vercel.app](https://painel-tarefas.vercel.app)
+https://super-painel-tarefas-ald0yn7h5-vitugits-projects.vercel.app/
 
 ## 📚 Organização do Código
 
