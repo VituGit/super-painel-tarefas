@@ -81,7 +81,7 @@ O projeto foi desenvolvido com foco em React, TailwindCSS para estilização e F
 
 ```bash
 git clone https://github.com/VituGit/super-painel-tarefas.git
-cd painel-de-tarefas
+cd super-painel-tarefas
 ```
 
 2. Instale as dependências:
@@ -103,7 +103,7 @@ yarn dev
 5. Acesse no navegador:
 
 ```bash
-http://localhost:3000
+http://localhost:5173
 ```
 
 ### 📤 Deploy
@@ -126,12 +126,13 @@ src/
 ├── pages/
 │   ├── TasksPage.tsx
 │   ├── LoginPage.tsx
+│   ├── RegisterPage.tsx
 ├── services/
 │   ├── api.ts
 ├── context/
 │   ├── AuthContext.tsx
 ├── App.tsx
-├── index.tsx
+├── main.tsx
 ```
 
 ## 📌 Melhorias Futuras
