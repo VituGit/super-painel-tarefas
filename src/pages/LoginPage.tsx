@@ -21,8 +21,9 @@ const LoginPage = () => {
 
       if (user && user.password === password) {
         localStorage.setItem("user", JSON.stringify(user));
-        alert("Login bem-sucedido!");
+        console.log("Login bem-sucedido! Redirecionando...");
         navigate("/tasks");
+
       } else {
         alert("Credenciais inválidas. Tente novamente.");
       }
@@ -88,6 +89,7 @@ const LoginPage = () => {
             </button>
           </div>
         </form>
+
 
         <p className="mt-10 text-center text-sm/6 text-gray-500">
           Não tem uma conta?{" "}
