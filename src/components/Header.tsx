@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { HiOutlineLogout } from "react-icons/hi";
 import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [username, setUsername] = useState<string | null>(null);
-  const navigate = useNavigate();
   const { logout } = useAuth();
 
   useEffect(() => {
