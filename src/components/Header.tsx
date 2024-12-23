@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { HiOutlineLogout } from "react-icons/hi";
+import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [username, setUsername] = useState<string | null>(null);
   const navigate = useNavigate();
+  const { logout } = useAuth();
 
   useEffect(() => {
     if (darkMode) {
@@ -22,9 +24,9 @@ const Header = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("user");
-    navigate("/login");
+    logout();
   };
+
 
   return (
     <header className="fixed top-0 left-0 right-0 h-20 w-full py-4 px-6 flex justify-between items-center bg-blue-200 dark:bg-gray-800 z-50 shadow-md">

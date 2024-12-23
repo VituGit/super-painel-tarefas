@@ -80,7 +80,7 @@ O projeto foi desenvolvido com foco em React, TailwindCSS para estilização e F
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/painel-de-tarefas.git
+git clone https://github.com/VituGit/super-painel-tarefas.git
 cd painel-de-tarefas
 ```
 
@@ -90,12 +90,6 @@ cd painel-de-tarefas
 npm install
 # ou
 yarn install
-```
-
-3. Crie um arquivo `.env` na raiz do projeto com a URL da API:
-
-```env
-REACT_APP_API_URL=http://sua-api.com
 ```
 
 4. Inicie o servidor de desenvolvimento:
@@ -134,6 +128,8 @@ src/
 │   ├── LoginPage.tsx
 ├── services/
 │   ├── api.ts
+├── context/
+│   ├── AuthContext.tsx
 ├── App.tsx
 ├── index.tsx
 ```
@@ -146,10 +142,10 @@ src/
 
 ## 👤 Autor
 
-**Seu Nome**
+**Victor Gurgel**
 
-- GitHub: [seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [seu-linkedin](https://linkedin.com/in/seu-linkedin)
+- GitHub: [VituGit](https://github.com/VituGit)
+- LinkedIn: [Victor Gurgel](https://www.linkedin.com/in/victor-p-gurgel/)
 
 ---
 

@@ -1,29 +1,30 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // Importa o hook useAuth
 import api from "../services/api";
 
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { login } = useAuth(); // Obtém o método login do contexto
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-
+  
     if (!username || !password) {
       alert("Por favor, preencha todos os campos!");
       return;
     }
-
+  
     try {
       const response = await api.get(`/users?username=${username}`);
       const user = response.data[0];
-
+  
       if (user && user.password === password) {
         localStorage.setItem("user", JSON.stringify(user));
-        console.log("Login bem-sucedido! Redirecionando...");
+        login(user);
         navigate("/tasks");
-
       } else {
         alert("Credenciais inválidas. Tente novamente.");
       }
@@ -32,6 +33,7 @@ const LoginPage = () => {
       alert("Erro ao fazer login. Tente novamente mais tarde.");
     }
   };
+  
 
   return (
     <div className="flex min-h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-blue-100">

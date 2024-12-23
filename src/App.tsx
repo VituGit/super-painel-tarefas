@@ -1,24 +1,32 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import TasksPage from "./pages/TasksPage";
 
 const App = () => {
-  const isLoggedIn = !!localStorage.getItem("user");
-
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Navigate to={isLoggedIn ? "/tasks" : "/login"} />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route
-          path="/tasks"
-          element={isLoggedIn ? <TasksPage /> : <Navigate to="/login" />}
-        />
-      </Routes>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<PrivateRoute redirectTo="/login"><TasksPage /></PrivateRoute>} />
+          <Route path="/login" element={<PublicRoute redirectTo="/tasks"><LoginPage /></PublicRoute>} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/tasks" element={<PrivateRoute redirectTo="/login"><TasksPage /></PrivateRoute>} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
+};
+
+const PrivateRoute = ({ children, redirectTo }: { children: JSX.Element; redirectTo: string }) => {
+  const { isLoggedIn } = useAuth();
+  return isLoggedIn ? children : <Navigate to={redirectTo} />;
+};
+
+const PublicRoute = ({ children, redirectTo }: { children: JSX.Element; redirectTo: string }) => {
+  const { isLoggedIn } = useAuth();
+  return isLoggedIn ? <Navigate to={redirectTo} /> : children;
 };
 
 export default App;
