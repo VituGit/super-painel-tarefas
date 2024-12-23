@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# Gerenciador de Tarefas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação web interativa para gerenciar tarefas com suporte a filtros por prioridade e status, edição dinâmica e animações. Este projeto utiliza React com TypeScript, animações com Framer Motion, e a biblioteca Headless UI para elementos interativos.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Recursos
 
-## Expanding the ESLint configuration
+### 🎨 Funcionalidades Gerais:
+- **Adição de Tarefas**: Adicione tarefas com prioridade personalizada.
+- **Edição de Nome e Prioridade**: Edite dinamicamente o nome e a prioridade de qualquer tarefa.
+- **Concluir/Desconcluir Tarefas**: Marque tarefas como concluídas ou retorne ao estado não concluído com animações suaves.
+- **Remoção de Tarefas**: Exclua tarefas individualmente.
+  
+### 🔍 Filtros:
+- **Por Prioridade**:
+  - Urgente ⚡
+  - Alta 🔴
+  - Média 🟡
+  - Baixa 🟢
+- **Por Status**:
+  - Concluído
+  - Não Concluído
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 💫 Animações:
+- **Transições suaves**: Efeitos visuais de entrada e saída com Framer Motion.
+- **Botões interativos**: Animações em botões ao passar o mouse ou clicar.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠️ Tecnologias Utilizadas
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Frontend:
+- **React** com **TypeScript**: Interface de usuário reativa e tipada.
+- **Framer Motion**: Efeitos de animação.
+- **Headless UI**: Componentes interativos como menus e listas personalizáveis.
+- **Heroicons**: Ícones estilizados e acessíveis.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Backend:
+- Simulado com uma API REST para gerenciar as tarefas.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Estilização:
+- **Tailwind CSS**: Estilização rápida e responsiva com classes utilitárias.
+- **Modo Claro/Escuro**: Suporte nativo para tema claro e escuro.
+
+---
+
+## 🖥️ Como Rodar o Projeto
+
+### Pré-requisitos
+- **Node.js** instalado (versão 16 ou superior).
+- **Gerenciador de Pacotes**: npm ou yarn.
+
+### Passos:
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+
+   cd seu-repositorio
+
+2. **Instale as dependências:**:
+```bash
+npm install
+# ou
+yarn install
+
+
